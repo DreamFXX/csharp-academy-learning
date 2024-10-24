@@ -37,6 +37,7 @@ int jeongSum = jeong1 + jeong2 + jeong3 + jeong4 + jeong5;
 
 
 System.Console.WriteLine("Součet bodů - Sofie: " + sophiaSum);
-System.Console.WriteLine("Součet bodů - Nicolas: " + nicolasSumSum);
+System.Console.WriteLine("Součet bodů - Nicolas: " + nicolasSum);
 System.Console.WriteLine("Součet bodů - Zahirah: " + zahirahSum);
 System.Console.WriteLine("Součet bodů - Jeong: " + jeongSum);
+
