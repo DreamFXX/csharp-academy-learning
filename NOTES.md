@@ -76,3 +76,8 @@ Složené operátory přiřazení
 - Složené operátory přiřazení +=, -=, *=, ++ a -- slouží k provádění matematických operací, jako je inkrementace nebo dekrementace, a k následnému přiřazení výsledku do původní proměnné.
 - Operátory inkrementace a dekrementace fungují různě v závislosti na tom, jestli příslušný operátor je před operandem nebo za ním.
 
+EXAMPLE Data typy a převody
+int fahrenheit = 94;
+decimal celsius = (fahrenheit - 32m) * (5m / 9m);
+Console.WriteLine("The temperature is " + celsius + " Celsius.");
+
