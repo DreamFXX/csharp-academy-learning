@@ -32,6 +32,7 @@ Formátování textu v řetězcích pomocí UNICODE
 - Znaky Unicode se nemusí správně tisknout v závislosti na aplikaci.
 
 Interpolace řetězců
+
 EXAMPLES
 - int version = 11;
 string updateText = "Update to Windows";
