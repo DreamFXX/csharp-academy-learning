@@ -31,8 +31,7 @@ Formátování textu v řetězcích pomocí UNICODE
 - Pokud chcete v řetězci vyjádřit znaky Unicode (UTF-16), použijte řídicí znak \u a příslušný čtyřmístný kód.
 - Znaky Unicode se nemusí správně tisknout v závislosti na aplikaci.
 
-Interpolace řetězců
-
+Interpolace řetězců 
 EXAMPLES
 - int version = 11;
 string updateText = "Update to Windows";
@@ -42,4 +41,38 @@ Console.WriteLine(message);
 string message = $"Hello {firstName}!";
 Console.WriteLine(message);
 Dolar = interpolace, Zavináč = Dají se použít i / -> třeba string projectName = "First-Project";  Console.WriteLine($@"C:\Output\{projectName}\Data");
+
+Operace s čísly
+- S čísly můžete provádět matematické operaci, jako je sčítání.
+- Znaménko plus + se používá jak ke spojování, tak ke sčítání řetězců. Tomuto stavu se říká přetížení operátoru. Kompilátor odvodí správný způsob použití operátoru podle použitých datových typů operandů.
+- Pokud je zřejmé, že se vývojář snaží spojit řetězcovou reprezentaci čísla s jiným řetězcem pro účely prezentace, tak kompilátor jazyka C# implicitně převede typ int na typ string (když je to možné).
+- Pomocí závorek definujte pořadí operací, abyste explicitně řekli kompilátoru, že chcete provést určité operace před jinými operacemi.
+
+Přetypování čísel z celých na desetinné
+- int first = 7;
+  int second = 5;
+  decimal quotient = (decimal)first / (decimal)second;
+  Console.WriteLine(quotient);
+
+- Pomocí % (např. 10%8) nám výsledek vyhodí zbytek po dělení, v tomto případě tedy 2.
+
+
+REKAPITULACE Operací s čísly
+- Základní matematické operace se provádějí pomocí operátorů +, -, * a /.
+- Když vydělíte dvě hodnoty typu int, ve výsledku se oříznou všechny hodnoty za desetinnou čárkou (tečkou). Pokud chcete zachovat hodnoty za desetinnou čárkou, musíte dělitele nebo dělitele (nebo obojí) přetypovat na int číslo s plovoucí desetinnou čárkou, jako decimal je číslo s plovoucí desetinnou čárkou, a potom musí být podíl stejného typu s plovoucí desetinnou čárkou, aby nedocházelo ke zkrácení.
+- Operace přetypování způsobí, že se s hodnotou bude dočasně zacházet tak, jako by šlo o jiný datový typ.
+- Operátor % umožňuje získat zbytek po dělení.
+- Operace se provádějí v pořadí: závorky, umocňování, násobení a dělení (zleva doprava), sčítání a odčítání (zleva doprava).
+
+Složené operátory přiřazení
+- Operátory +=, -=, *=, ++ a -- se nazývají složené operátory přiřazení, protože před operací přiřazení provedou ještě další operaci a její výsledek přiřadí proměnné. Například operátor += se nazývá složený operátor sčítání a přiřazení.
+- int value = 0;     // value is now 0.
+  value = value + 5; // value is now 5.
+  value += 5;        // value is now 10.
+- int value = 0;     // value is now 0.
+  value = value + 1; // value is now 1.
+  value++;           // value is now 2.
+  
+- Složené operátory přiřazení +=, -=, *=, ++ a -- slouží k provádění matematických operací, jako je inkrementace nebo dekrementace, a k následnému přiřazení výsledku do původní proměnné.
+- Operátory inkrementace a dekrementace fungují různě v závislosti na tom, jestli příslušný operátor je před operandem nebo za ním.
 
